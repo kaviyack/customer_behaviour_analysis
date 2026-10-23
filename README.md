@@ -6,15 +6,15 @@ An end-to-end data analytics project that transforms retail customer shopping da
 
 This project analyzes customer shopping behavior to understand purchasing patterns, customer preferences, spending trends, and factors that influence purchase decisions.
 
-The project follows a complete data analytics workflow, starting with raw dataset loading and exploratory data analysis, followed by data cleaning, SQL-based analysis, interactive dashboard development, and business reporting.
+The project follows a complete data analytics workflow, from loading and exploring raw data to cleaning, SQL-based analysis, interactive dashboard development, and business reporting.
 
-**Project objectives:**
+**Project Objectives**
 - Explore and understand customer shopping data.
 - Clean and prepare data for reliable analysis.
 - Perform exploratory data analysis (EDA) using Python.
 - Answer business questions using SQL.
 - Build an interactive Power BI dashboard.
-- Summarize findings and recommendations in a report and presentation.
+- Communicate findings through a report and presentation.
 
 ## 📊 Dataset
 
@@ -29,7 +29,7 @@ The dataset contains customer-level shopping information, including:
 - Review ratings and shopping preferences
 - Other purchasing and customer behavior attributes
 
-The dataset contains **3,900 records and 18 columns**.
+**Dataset size:** 3,900 records and 18 columns.
 
 **Dataset file:** `customer_shopping_behavior.csv`
 
@@ -38,11 +38,12 @@ The dataset contains **3,900 records and 18 columns**.
 | Tool | Purpose |
 |---|---|
 | Python | Data analysis and preparation |
-| Pandas | Data loading, cleaning, and manipulation |
-| Jupyter Notebook | Interactive analysis and documentation |
-| PostgreSQL / MySQL / SQL Server | Database storage and SQL analysis |
-| SQL | Business queries and data aggregation |
-| Power BI | Interactive dashboard and visualization |
+| Pandas | Data manipulation and cleaning |
+| Jupyter Notebook | Interactive analysis |
+| PostgreSQL | Database storage and SQL analysis |
+| SQL | Business queries and aggregations |
+| SQLAlchemy | Python-to-database connectivity |
+| Power BI | Interactive dashboards and visualization |
 | Gamma AI | Presentation creation |
 | Git & GitHub | Version control and project hosting |
 
@@ -51,34 +52,27 @@ The dataset contains **3,900 records and 18 columns**.
 ### 1. Data Loading and Exploration — Python
 
 - Load the CSV dataset using Pandas.
-- Inspect the dataset structure, dimensions, and data types.
-- Examine column names and summary statistics.
-- Identify missing values, duplicates, and potential data quality issues.
+- Inspect dataset dimensions, columns, and data types.
+- Generate summary statistics.
+- Examine missing values, duplicates, and potential data quality issues.
 
 ### 2. Data Cleaning and Preparation — Python
 
 - Handle missing or inconsistent values where necessary.
-- Check and remove duplicate records where appropriate.
-- Validate data types and prepare columns for analysis.
-- Create or transform features when required.
-- Prepare the cleaned dataset for database loading.
+- Check for duplicate records.
+- Validate data types and column values.
+- Transform features where required.
+- Prepare the dataset for further analysis.
 
-### 3. Database Integration — SQL
+### 3. Database Integration — PostgreSQL
 
-Load the prepared dataset into a database using Python and SQLAlchemy.
+Load the prepared dataset into PostgreSQL using Python and SQLAlchemy.
 
-Supported database options:
-- PostgreSQL
-- MySQL
-- Microsoft SQL Server
-
-The SQL scripts address business questions related to customer spending, purchasing behavior, product ratings, discounts, and shipping preferences.
+The database provides a structured environment for querying customer transactions and analyzing purchasing behavior.
 
 ### 4. SQL Business Analysis
 
-Use SQL queries to extract actionable insights from the customer shopping dataset.
-
-Example business questions include:
+Use SQL queries to investigate business questions, including:
 
 - What is the total purchase revenue by gender?
 - Which customers used discounts but still spent more than the average purchase amount?
@@ -86,44 +80,50 @@ Example business questions include:
 - How do average purchase amounts compare across shipping types?
 - What patterns can be identified across customer segments and product categories?
 
+The SQL analysis uses aggregation, filtering, grouping, and other querying techniques to extract useful business insights.
+
 ### 5. Power BI Dashboard
 
-Build an interactive dashboard to explore customer shopping trends and communicate analytical findings.
+Develop an interactive dashboard to explore customer shopping trends and communicate analytical findings.
 
-The dashboard can be used to examine:
+The dashboard supports analysis of:
+
 - Customer demographics
-- Purchase amount and revenue patterns
-- Product categories and purchasing preferences
+- Purchase amounts and spending patterns
+- Product categories and preferences
 - Customer review ratings
-- Seasonal and shopping behavior trends
-
-Dashboard file: `customer_behavior_dashboard.pbix`
+- Seasonal shopping behavior
 
 ### 6. Reporting and Presentation
 
-- Prepare a project report summarizing the methodology, analysis, findings, and business recommendations.
-- Create a presentation using Gamma AI to communicate the project's key insights in a clear and visual format.
+- Prepare a report documenting the methodology, analysis, key findings, and business recommendations.
+- Use Gamma AI to create a presentation that communicates the project's objectives, analytical process, and insights.
 
 ## 📈 Dashboard
 
-The Power BI dashboard provides a visual overview of customer shopping behavior and supports exploration of purchasing patterns and customer preferences.
+The Power BI dashboard provides a visual overview of customer shopping behavior, helping explore purchasing patterns, customer preferences, and spending trends.
 
-**Dashboard file:** `customer_behavior_dashboard.pbix`
+### Dashboard Preview
 
-To view the dashboard, download the file and open it using Microsoft Power BI Desktop.
+![Customer Shopping Behavior Dashboard](<dashboard - customer analysis.png>)
+
+**Power BI file:** `customer_behavior_dashboard.pbix`
+
+To explore the interactive dashboard, download the Power BI file from this repository and open it using Microsoft Power BI Desktop.
 
 ## 💡 Results and Business Value
 
-This project demonstrates how raw retail data can be converted into structured analysis and business intelligence.
+This project demonstrates how raw retail data can be transformed into structured analysis and business intelligence.
 
-The workflow supports:
+The analysis supports:
+
 - Understanding customer purchasing patterns.
 - Comparing spending behavior across customer segments.
 - Identifying product and category-level trends.
-- Evaluating review ratings and shopping preferences.
-- Communicating findings through SQL queries, visualizations, and reports.
+- Evaluating customer ratings and shopping preferences.
+- Presenting findings through SQL queries, visualizations, and reports.
 
-The specific findings and recommendations should be drawn from the completed SQL analysis and Power BI dashboard.
+The final business findings and recommendations are based on the results obtained from the SQL analysis and Power BI dashboard.
 
 ## 📁 Project Structure
 
@@ -135,6 +135,7 @@ customer_behaviour_analysis/
 ├── customer_behavior_sql_queries.sql
 ├── customer_behavior_dashboard.pbix
 ├── Customer-Shopping-Behavior-Analysis.pptx
+├── dashboard - customer analysis.png
 ├── README.md
 └── LICENSE
 ```
@@ -143,11 +144,11 @@ customer_behaviour_analysis/
 
 ### Prerequisites
 
-Install or set up the following tools:
+Install or configure the following tools:
 
 - Python 3
 - Jupyter Notebook
-- PostgreSQL, MySQL, or Microsoft SQL Server
+- PostgreSQL
 - Power BI Desktop
 - Git
 
@@ -164,19 +165,11 @@ cd customer_behaviour_analysis
 python -m pip install pandas sqlalchemy jupyter
 ```
 
-For PostgreSQL, install the appropriate database driver:
+Install the PostgreSQL driver:
 
 ```bash
 python -m pip install "psycopg[binary]"
 ```
-
-For MySQL, install a compatible driver such as:
-
-```bash
-python -m pip install pymysql
-```
-
-For SQL Server, configure a compatible SQL Server driver and connection string.
 
 ### Step 3: Launch Jupyter Notebook
 
@@ -186,47 +179,49 @@ python -m notebook
 
 Open `Customer_Shopping_Behavior_Analysis.ipynb` and execute the notebook cells in order.
 
-### Step 4: Set Up the SQL Database
+### Step 4: Set Up PostgreSQL
 
-1. Start your chosen database server.
+1. Start your PostgreSQL server.
 2. Create a database for the project.
 3. Configure the database connection in the notebook.
-4. Load the prepared dataset into the database.
+4. Load the prepared dataset into PostgreSQL.
 5. Open `customer_behavior_sql_queries.sql`.
-6. Execute the queries using your database's SQL client.
+6. Execute the queries using pgAdmin or another PostgreSQL client.
 
-**Note:** SQL syntax and connection settings may need minor adjustments depending on the database engine you choose.
+**Note:** Update the database connection settings to match your local PostgreSQL installation. Never commit database passwords or other credentials to GitHub.
 
 ### Step 5: Open the Power BI Dashboard
 
-Open `customer_behavior_dashboard.pbix` in Power BI Desktop.
+1. Download `customer_behavior_dashboard.pbix` from the repository.
+2. Open it in Power BI Desktop.
+3. Configure the data source and credentials if prompted.
+4. Explore the available dashboard visualizations.
 
-If prompted, configure the data source and credentials to match your database setup.
+### Step 6: Review the Presentation
 
-### Step 6: Review the Report and Presentation
+Open `Customer-Shopping-Behavior-Analysis.pptx` to review the project presentation.
 
-Use the project report to review the methodology and findings. Open `Customer-Shopping-Behavior-Analysis.pptx` to review the presentation included in the repository.
-
-Gamma AI can also be used to create or refine the presentation.
+Gamma AI can also be used to create or refine the presentation and communicate the key findings.
 
 ## 📌 Key Skills Demonstrated
 
-- Data loading and manipulation with Python
+- Python programming and Pandas
 - Exploratory data analysis (EDA)
-- Data cleaning and validation
+- Data cleaning and preparation
 - SQL querying and business analysis
-- Relational database integration
-- Data visualization and dashboard development
+- PostgreSQL database integration
+- Data visualization using Power BI
 - Business reporting and presentation
-- Analytical problem-solving
+- Analytical thinking and problem-solving
 
 ## 🔮 Future Improvements
 
 - Automate the data ingestion and cleaning workflow.
 - Add more business-focused KPIs and dashboard filters.
 - Expand customer segmentation and purchasing trend analysis.
-- Document reproducible database setup and query execution.
-- Add screenshots of the dashboard and examples of key findings.
+- Document database setup and query execution in greater detail.
+- Add quantified findings and actionable recommendations.
+- Include additional dashboard views for deeper analysis.
 
 ## 👩‍💻 Author
 
@@ -237,4 +232,3 @@ GitHub: [@kaviyack](https://github.com/kaviyack)
 ## 📄 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-
