@@ -105,7 +105,7 @@ The Power BI dashboard provides a visual overview of customer shopping behavior,
 
 ### Dashboard Preview
 
-![Customer Shopping Behavior Dashboard](<dashboard - customer analysis.png>)
+![Customer Shopping Behavior Dashboard](<customer analysis dashboard.png>)
 
 **Power BI file:** `customer_behavior_dashboard.pbix`
 
